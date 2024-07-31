@@ -13,7 +13,7 @@ import gdown
 
 # Function to download the model from Google Drive
 def download_model():
-    url = 'https://drive.google.com/file/d/1ApmwcS9hCqxtDesn_B5B7AumqnzBRPEn/view?usp=sharing'  # Replace FILE_ID with the actual ID from the shareable link
+    url = 'https://drive.google.com/uc?id=1ApmwcS9hCqxtDesn_B5B7AumqnzBRPEn'  # Replace FILE_ID with the actual ID from the shareable link
     output = 'best.pt'
     gdown.download(url, output, quiet=False)
 
