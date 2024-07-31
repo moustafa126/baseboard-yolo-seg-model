@@ -7,13 +7,25 @@ if not os.path.isfile('/usr/lib/x86_64-linux-gnu/libGL.so.1'):
 from ultralytics import YOLO
 from PIL import Image
 import numpy as np
+import gdown
+
+
+
+# Function to download the model from Google Drive
+def download_model():
+    url = 'https://drive.google.com/file/d/1ApmwcS9hCqxtDesn_B5B7AumqnzBRPEn/view?usp=sharing'  # Replace FILE_ID with the actual ID from the shareable link
+    output = 'best.pt'
+    gdown.download(url, output, quiet=False)
+
+# Download the model if it doesn't exist
+if not os.path.exists('best.pt'):
+    download_model()
 
 # Load YOLO model
-model_path = 'best.pt'
-model = YOLO(model_path)
+model = YOLO('best.pt')
 
 # Streamlit app
-st.title("Baseboard YOLO-Seg Model")
+st.title("YOLO Segmentation Demo")
 
 # File uploader
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
