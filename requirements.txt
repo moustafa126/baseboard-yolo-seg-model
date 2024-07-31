@@ -2,5 +2,5 @@ streamlit
 opencv-python-headless
 ultralytics
 pillow
-onnxruntime
+gdown
 dill
